@@ -1,11 +1,11 @@
-const { writeFileSync, existsSync } = require("fs-extra");
+const{ writeFileSync, existsSync } = require("fs-extra");
 const { resolve } = require("path");
 
 module.exports.config = {
   name: "0admin",
   version: "2.0.0", //don't change credit
   hasPermssion: 2,
-  credits: "SHAHADAT SAHU",
+  credits: "Parves Sheikh,
   description: "Admin Management System",
   commandCategory: "Admin",
   usages: "[list | add | remove | only | boxonly] [uid | @mention | reply]",
