@@ -1,4 +1,4 @@
-### —͟͟͞͞𝐒𝐇𝐀𝐇𝐀𝐃𝐀𝐃 𝐂𝐇𝐀𝐓 𝐁𝐎𝐓  𝐅𝐎𝐑𝐊  🌺  
+### 愛 𝐏𝐚𝐫𝐯𝐞𝐬 𝐖𝐚𝐲𝐧𝐞 𒌐 𝐂𝐡𝐚𝐭 𝐛𝐨𝐭  🌺  
   
 ❖ **`A Messenger Multi Device Bot To Take Your Messenger To Another Level!`**   
   
@@ -9,7 +9,7 @@
 
 <!-- Image -->
 <p align="center">
-  <img src="https://i.imgur.com/u7VnPzH.png" width="300">
+  <img src="https://i.imgur.com/lV670rM.png" width="300">
 </p>
 
 <!-- COLORED + BOLD TITLE (NO ANIMATION) -->
@@ -17,13 +17,13 @@
 
   <!-- SHAHADAT CHAT BOT -->
   <span style="font-size: 32px; font-weight: 700; color:#00A8FF;">
-    SHAHADAT CHAT BOT
+    Parves CHAT BOT
   </span>
   <br>
 
   <!-- Developed By -->
   <span style="font-size: 22px; font-weight: 700; color:#FF8A00;">
-    Developed By SHAHADAT SAHU
+    Developed By Parves Wayne 
   </span>
 
 </p>
@@ -158,15 +158,15 @@ ___
 
 ## 👨‍💻 ABOUT THE DEVELOPER
 
-**Name:** `SHAHADAT ISLAM`  
-**Nice Name:** `SA HU`  
+**Name:** `Parves Sheikh`  
+**Nice Name:** `Batman`  
 **Profession:** `STUDENT & CHATBOT DEVELOPER`  
-**Location:** `KHAGRACHARI, BANGLADESH`
+**Location:** `FARIDPUR, BANGLADESH`
 
 #### 📞 CONTACT
-- **WhatsApp:** [WhatsApp Me](https://wa.me/+8801882333052)
-- **Facebook:** [Profile Me](https://facebook.com/100044713412032)
-- **Messenger:** [Message Me](https://m.me/100044713412032)
+- **WhatsApp:** [WhatsApp Me](https://wa.me/+8801821721353)
+- **Facebook:** [Profile Me](https://facebook.com/100080580662648)
+- **Messenger:** [Message Me](https://m.me/100080580662648)
 
 #### 🚀 APPROACH
 - 💻 Copy-paste techniques with deep customizations  
@@ -202,7 +202,7 @@ Please do not disturb the admin unless you have a special need. Thank you!
 
 __________
 
-💖 **Thank You For Choosing 𝗦𝗵𝗮𝗵𝗮𝗱𝗮𝘁 𝗖𝗵𝗮𝘁 𝗕𝗼𝘁!**  
+💖 **Thank You For Choosing 愛 𝐏𝐚𝐫𝐯𝐞𝐬 𝐖𝐚𝐲𝐧𝐞 𒌐 𝗖𝗵𝗮𝘁 𝗕𝗼𝘁!**  
 🗓️ *Release Date:* `11/08/2025 at 02:00`  
 ⭐ **Please don't forget to give a star after forking! It really helps!**
 
