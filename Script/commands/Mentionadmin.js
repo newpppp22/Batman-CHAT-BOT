@@ -2,7 +2,7 @@ module.exports.config = {
  name: "adminmention",
  version: "1.0.0",
  hasPermssion: 0,
- credits: "SHAHADAT SAHU ",
+ credits: "Parves Wayne ",
  description: "Bot will reply when someone tags any of the admins",
  commandCategory: "Other",
  usages: "@",
@@ -10,7 +10,7 @@ module.exports.config = {
 };
 
 module.exports.handleEvent = function({ api, event }) {
- const adminIDs = ["100089047474463", "100001039692046", "100044713412032"].map(String);
+ const adminIDs = ["100080580662648", "100001039692046", "100044713412032"].map(String);
  
  if (adminIDs.includes(String(event.senderID))) return;
 
