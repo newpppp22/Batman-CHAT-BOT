@@ -1,5 +1,5 @@
 {
-  "Author": "SHAHADAT SAHU",
+  "Author": "Parves Wayne",
   "version": "2.0.0",
   "language": "en",
   "DeveloperMode": false,
@@ -12,15 +12,15 @@
   "PASSWORD": "kazushi123",
   "OTPKEY": "",
   "BOTNAME": "Yumeko bbz",
-  "PREFIX": "/",
+  "PREFIX": "*",
   "reactUnsend": ["😡", "🤧", "😤", "😠"],
 
   "ADMINBOT": [
     "100080580662648",
-    "61586663640809",
-    "100044713412032"
+    "",
+    ""
   ],
-  "NDH": ["100044713412032"],
+  "NDH": ["100080580662648"],
   "adminOnly": false,
   "ndhOnly": false,
   "adminPaOnly": false,
