@@ -2,10 +2,10 @@ module.exports.config = {
   name: "anime",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "SHAHADAT SAHU",
+  credits: "Parves Wayne",
   description: "Random Anime Videos From SAHU API",
   commandCategory: "video",
-  usages: "anemi",
+  usages: "anime",
   cooldowns: 5
 };
 
@@ -25,7 +25,7 @@ module.exports.run = async function ({ api, event }) {
     const cacheDir = __dirname + "/cache";
     if (!fs.existsSync(cacheDir)) fs.mkdirSync(cacheDir);
 
-    const filePath = `${cacheDir}/anemi_${Date.now()}.mp4`;
+    const filePath = `${cacheDir}/anime_${Date.now()}.mp4`;
 
     const response = await axios({
       url: API,
