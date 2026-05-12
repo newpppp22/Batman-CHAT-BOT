@@ -6,7 +6,7 @@ module.exports = {
     name: "4k",
     version: "1.0.0",
     hasPermssion: 0,
-    credits: "Parves Sheikh", //don't change credit
+    credits: "Parves Wayne", //don't change credit
     description: "Enhance Photo - Reply with image to upscale",
     commandCategory: "Image Editing Tools",
     usages: "Reply to an image",
@@ -66,6 +66,6 @@ async function processImage(api, threadID, messageID, messageReply) {
 
     api.unsendMessage(wait.messageID);
   } catch (e) {
-    api.sendMessage("❌ API Error! Boss Parves ke message din!", threadID, messageID);
+    api.sendMessage("❌ API Error! Boss Batman ke message din!", threadID, messageID);
   }
 }
