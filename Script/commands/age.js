@@ -2,7 +2,7 @@ module.exports = {
   config: {
     name: "age",
     version: "2.1",
-    author: "—͟͟͞͞𝐂𝐘𝐁𝐄𝐑 ☢️_𖣘 -𝐁𝐎𝐓 ⚠️ 𝑻𝑬𝑨𝑴_ ☢️",
+    author: "Parves Wayne ",
     hasPermission: 0,
     commandCategory: "utility",
     cooldowns: 5,
@@ -93,7 +93,7 @@ module.exports = {
 ┃❖ ${totalDays} Days
 ┃❖ ${totalHours} Hours
 ┣━━━━━━━━━━━━━━━━❂
-┃  𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗯𝘆: ─꯭─⃝‌‌𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭
+┃ 𝗖𝗿𝗲𝗮𝘁𝗲 𝗯𝘆 : 愛 𝐏𝐚𝐫𝐯𝐞𝐬 𝐖𝐚𝐲𝐧𝐞 𒌐
 ┗━━━━━━━━━━━━━━━━❂`,
         attachment: fs.createReadStream(avatarPath)
       };
