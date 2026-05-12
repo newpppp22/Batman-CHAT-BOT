@@ -3,7 +3,7 @@ module.exports = {
  name: "autodl",
  version: "0.0.2",
  hasPermssion: 0,
- credits: "SHAON",
+ credits: "Parves Wayne",
  description: "auto video download",
  commandCategory: "user",
  usages: "",
@@ -29,7 +29,7 @@ const data = await alldown(content);
  fs.writeFileSync(__dirname + "/cache/auto.mp4", Buffer.from(video, "utf-8"))
 
  return api.sendMessage({
- body: `🔥🚀 𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭🔥💻 
+ body: `🔥🚀 𑣲⋆ 𝐘𝐮𝐦𝐞𝐤𝐨 𝐁𝐛𝐳 𐙚 🔥💻 
 📥⚡𝗔𝘂𝘁𝗼 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿⚡📂
 🎬 𝐄𝐧𝐣𝐨𝐲 𝐭𝐡𝐞 𝐕𝐢𝐝𝐞𝐨 🎀`,
  attachment: fs.createReadStream(__dirname + "/cache/auto.mp4")
