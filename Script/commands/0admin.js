@@ -41,26 +41,29 @@ module.exports.onLoad = () => {
   }
 };
 
-module.exports.handleEvent = async function ({
-  api,
-  event,
-  Users
-}) {
+module.exports.handleEvent = async function ({ api, event }) {
+  try {
+    const configPath = global.client.configPath;
 
-  const configPath = global.client.configPath;
+    delete require.cache[require.resolve(configPath)];
+    const config = require(configPath);
 
-  delete require.cache[require.resolve(configPath)];
-  const config = require(configPath);
+    // adminOnly system
+    if (config.adminOnly === true) {
 
-  if (
-    config.adminOnly == true &&
-    !config.ADMINBOT.includes(event.senderID)
-  ) {
-    return api.sendMessage(
-      "🔒 Bot is currently admin only.",
-      event.threadID,
-      event.messageID
-    );
+      const isAdmin = global.config.ADMINBOT.includes(event.senderID);
+
+      if (!isAdmin) {
+        return api.sendMessage(
+          "🔒 Bot is currently admin only.",
+          event.threadID,
+          event.messageID
+        );
+      }
+    }
+
+  } catch (e) {
+    console.log("adminOnly error:", e);
   }
 };
 
