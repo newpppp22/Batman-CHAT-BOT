@@ -46,10 +46,10 @@ module.exports.run = async function({ api, event }) {
 │ ${time}
 └───────────────⭓
  `,
- attachment: fs.createReadStream(__dirname + "/cache/owner.jpg")
- }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/owner.jpg"));
+ attachment: fs.createReadStream(__dirname + "/cache/owner.png")
+ }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/owner.png"));
 
  return request("https://i.imgur.com/lV670rM.png")
- .pipe(fs.createWriteStream(__dirname + '/cache/owner.jpg'))
+ .pipe(fs.createWriteStream(__dirname + '/cache/owner.png'))
  .on('close', () => callback());
 };
