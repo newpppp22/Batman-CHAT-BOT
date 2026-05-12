@@ -65,9 +65,9 @@ module.exports.run = async function ({ api, event, args, Users, Threads }) {
  𑣲⋆ 𝐘𝐮𝐦𝐞𝐤𝐨 𝐁𝐛𝐳 𐙚 Chat bot`;
 
  const imgLinks = [
- "https://i.imgur.com/lV670rM.png",
- "https://i.imgur.com/LPYnf78.png",
- "",
+ "https://i.imgur.com/sU6IbRx.jpg",
+ "https://i.imgur.com/3nU0i9N.jpg",
+ "https://i.imgur.com/7S3PexG.jpg",
  ""
  ];
 
