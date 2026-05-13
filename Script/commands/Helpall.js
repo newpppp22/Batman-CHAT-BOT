@@ -36,7 +36,7 @@ ${allCommands.map(cmd => `║ ➔ ${cmd}`).join("\n")}
 
  
  const backgrounds = [
- "",
+ "https://i.imgur.com/lV670rM.png",
  "",
  "",
  ""
