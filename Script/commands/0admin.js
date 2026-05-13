@@ -3,14 +3,13 @@ const { resolve } = require("path");
 
 module.exports.config = {
   name: "0admin",
-  version: "3.0.0",
+  version: "3.1.0",
   hasPermssion: 2,
-  credits: "Parves Wayne",
-  description: "Advanced Admin System",
+  credits: "Parves Wayne (Fixed Version)",
+  description: "Advanced Admin System (Clean Fix)",
   commandCategory: "Admin",
   usages: "[list/add/remove/adon/adoff]",
-  cooldowns: 0,
-  usePrefix: true
+  cooldowns: 0
 };
 
 module.exports.languages = {
@@ -24,49 +23,36 @@ module.exports.languages = {
   }
 };
 
+/* ---------- INIT FILE ---------- */
 module.exports.onLoad = () => {
   const path = resolve(__dirname, "cache", "data.json");
 
   if (!existsSync(path)) {
-    writeFileSync(
-      path,
-      JSON.stringify(
-        {
-          adminbox: {}
-        },
-        null,
-        4
-      )
-    );
+    writeFileSync(path, JSON.stringify({ adminbox: {} }, null, 4));
   }
 };
 
+/* ---------- HANDLE EVENT (FIXED) ---------- */
 module.exports.handleEvent = async function ({ api, event }) {
   try {
     const configPath = global.client.configPath;
-
     delete require.cache[require.resolve(configPath)];
     const config = require(configPath);
 
-    // adminOnly system
     if (config.adminOnly === true) {
-
-      const isAdmin = global.config.ADMINBOT.includes(event.senderID);
+      const isAdmin = (global.config.ADMINBOT || []).includes(event.senderID);
 
       if (!isAdmin) {
-        return api.sendMessage(
-          "🔒 Bot is currently admin only.",
-          event.threadID,
-          event.messageID
-        );
+        // শুধু block করবে, কোনো message পাঠাবে না
+        return;
       }
     }
-
   } catch (e) {
     console.log("adminOnly error:", e);
   }
 };
 
+/* ---------- MAIN ---------- */
 module.exports.run = async function ({
   api,
   event,
@@ -75,49 +61,34 @@ module.exports.run = async function ({
   permssion,
   getText
 }) {
-
-  const { threadID, messageID, mentions } = event;
+  const { threadID, messageID, mentions, type, messageReply } = event;
 
   const content = args.slice(1);
+  const mentionIDs = Object.keys(mentions || {});
 
-  const mentionIDs = Object.keys(mentions);
-
-  const { configPath } = global.client;
-
+  const configPath = global.client.configPath;
   delete require.cache[require.resolve(configPath)];
-
   const config = require(configPath);
 
-  const ADMINBOT = global.config.ADMINBOT || config.ADMINBOT || [];
+  let ADMINBOT = global.config.ADMINBOT || config.ADMINBOT || [];
 
   const getUIDs = () => {
-
-    if (event.type == "message_reply")
-      return [event.messageReply.senderID];
-
-    if (mentionIDs.length)
-      return mentionIDs;
-
-    if (!isNaN(content[0]))
-      return [content[0]];
-
+    if (type === "message_reply") return [messageReply.senderID];
+    if (mentionIDs.length) return mentionIDs;
+    if (!isNaN(content[0])) return [content[0]];
     return [];
   };
 
   switch (args[0]) {
 
+    /* ---------- LIST ---------- */
     case "list":
     case "all": {
-
       let msg = [];
 
       for (const id of ADMINBOT) {
-
         const name = (await Users.getData(id)).name;
-
-        msg.push(
-          `• ${name}\nhttps://facebook.com/${id}`
-        );
+        msg.push(`• ${name}\nhttps://facebook.com/${id}`);
       }
 
       return api.sendMessage(
@@ -127,8 +98,8 @@ module.exports.run = async function ({
       );
     }
 
+    /* ---------- ADD ---------- */
     case "add": {
-
       if (permssion != 3)
         return api.sendMessage(
           getText("noPermission", "add"),
@@ -137,42 +108,30 @@ module.exports.run = async function ({
         );
 
       const ids = getUIDs();
-
       let added = [];
 
       for (const id of ids) {
-
         if (!ADMINBOT.includes(id)) {
-
           ADMINBOT.push(id);
-
           config.ADMINBOT.push(id);
 
           const name = (await Users.getData(id)).name;
-
           added.push(`• ${name} (${id})`);
         }
       }
 
-      writeFileSync(
-        configPath,
-        JSON.stringify(config, null, 4)
-      );
+      writeFileSync(configPath, JSON.stringify(config, null, 4));
 
       return api.sendMessage(
-        getText(
-          "addedAdmin",
-          added.length,
-          added.join("\n")
-        ),
+        getText("addedAdmin", added.length, added.join("\n")),
         threadID,
         messageID
       );
     }
 
+    /* ---------- REMOVE ---------- */
     case "remove":
     case "rm": {
-
       if (permssion != 3)
         return api.sendMessage(
           getText("noPermission", "remove"),
@@ -181,43 +140,31 @@ module.exports.run = async function ({
         );
 
       const ids = getUIDs();
-
       let removed = [];
 
       for (const id of ids) {
-
         const index = ADMINBOT.indexOf(id);
 
-        if (index != -1) {
-
+        if (index !== -1) {
           ADMINBOT.splice(index, 1);
-
           config.ADMINBOT.splice(index, 1);
 
           const name = (await Users.getData(id)).name;
-
           removed.push(`• ${name} (${id})`);
         }
       }
 
-      writeFileSync(
-        configPath,
-        JSON.stringify(config, null, 4)
-      );
+      writeFileSync(configPath, JSON.stringify(config, null, 4));
 
       return api.sendMessage(
-        getText(
-          "removedAdmin",
-          removed.length,
-          removed.join("\n")
-        ),
+        getText("removedAdmin", removed.length, removed.join("\n")),
         threadID,
         messageID
       );
     }
 
+    /* ---------- ADMIN ON ---------- */
     case "adon": {
-
       if (permssion != 3)
         return api.sendMessage(
           "❎ Only Bot Owner Can Use This",
@@ -226,21 +173,17 @@ module.exports.run = async function ({
         );
 
       config.adminOnly = true;
-
-      writeFileSync(
-        configPath,
-        JSON.stringify(config, null, 4)
-      );
+      writeFileSync(configPath, JSON.stringify(config, null, 4));
 
       return api.sendMessage(
-        getText("adminOn"),
+        "🔒 Admin Only Mode Enabled",
         threadID,
         messageID
       );
     }
 
+    /* ---------- ADMIN OFF ---------- */
     case "adoff": {
-
       if (permssion != 3)
         return api.sendMessage(
           "❎ Only Bot Owner Can Use This",
@@ -249,19 +192,16 @@ module.exports.run = async function ({
         );
 
       config.adminOnly = false;
-
-      writeFileSync(
-        configPath,
-        JSON.stringify(config, null, 4)
-      );
+      writeFileSync(configPath, JSON.stringify(config, null, 4));
 
       return api.sendMessage(
-        getText("adminOff"),
+        "🔓 Admin Only Mode Disabled",
         threadID,
         messageID
       );
     }
 
+    /* ---------- DEFAULT ---------- */
     default:
       return api.sendMessage(
         "Use:\n• 0admin list\n• 0admin add\n• 0admin remove\n• 0admin adon\n• 0admin adoff",
