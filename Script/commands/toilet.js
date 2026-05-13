@@ -1,7 +1,7 @@
 module.exports.config = {
   name: "toilet",
   version: "1.0.0",
-  credits: "SHAHADAT SAHU",
+  credits: "Parves Wayne",
   description: "Generate a couple banner image using sender and target Facebook UID via Avatar Canvas API",
   commandCategory: "banner",
   usePrefix: true,
@@ -68,6 +68,6 @@ module.exports.run = async function ({ api, event, args, Currencies }) {
     );
 
   } catch (e) {
-    return api.sendMessage("API Error Call Boss SAHU", event.threadID, event.messageID);
+    return api.sendMessage("API Error Call Boss Batman", event.threadID, event.messageID);
   }
 };
