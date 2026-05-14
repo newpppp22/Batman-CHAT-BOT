@@ -108,9 +108,9 @@ module.exports.run = async function ({
  let _0x20cecf = global.data.allThreadID || [];
  let _0x56a425 = 0;
  let _0x55b9ed = 0;
- let _0x2548b1 = "𝐀𝐃𝐌𝐈𝐍 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐓𝐈𝐎𝐍\n•┄┅═════❁🌺❁═════┅┄•\n\n𝐌𝐀𝐒𝐒𝐀𝐆𝐄: " + _0x316999.join(" ") + "\n\n𝗔𝗗𝗠𝗜𝗡 𝗡𝗔𝗠𝗘: " + (await _0x56ade5.getNameUser(_0x4b2640)) + " ";
+ let _0x2548b1 = "𝐀𝐃𝐌𝐈𝐍 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐓𝐈𝐎𝐍\n•┄┅═════❁🌺❁═════┅┄•\n\n𝐌𝐀𝐒𝐒𝐀𝐆𝐄: " + _0x316999.join(" ") + "\n\n𝗔𝗗𝗠𝗜𝗡 𝗡𝗔𝗠𝗘: 愛 𝐏𝐚𝐫𝐯𝐞𝐬 𝐖𝐚𝐲𝐧𝐞 𒌐" + (await _0x56ade5.getNameUser(_0x4b2640)) + " ";
  if (_0x5cd554.type == "message_reply") {
- _0x2548b1 = await getAtm(_0x415c8b.attachments, "𝐌𝐀𝐒𝐒𝐀𝐆𝐄 𝐅𝐑𝐎𝐌 𝐀𝐃𝐌𝐈𝐍\n•┄┅═════❁🌺❁═════┅┄•\n𝐌𝐀𝐒𝐒𝐀𝐆𝐄: " + _0x316999.join(" ") + "\n\n𝗔𝗗𝗠𝗜𝗡 𝗡𝗔𝗠𝗘: " + (await _0x56ade5.getNameUser(_0x4b2640)));
+ _0x2548b1 = await getAtm(_0x415c8b.attachments, "𝐌𝐀𝐒𝐒𝐀𝐆𝐄 𝐅𝐑𝐎𝐌 𝐀𝐃𝐌𝐈𝐍\n•┄┅═════❁🌺❁═════┅┄•\n𝐌𝐀𝐒𝐒𝐀𝐆𝐄: " + _0x316999.join(" ") + "\n\n𝗔𝗗𝗠𝗜𝗡 𝗡𝗔𝗠𝗘: 愛 𝐏𝐚𝐫𝐯𝐞𝐬 𝐖𝐚𝐲𝐧𝐞 𒌐" + (await _0x56ade5.getNameUser(_0x4b2640)));
  }
  await new Promise(_0x23b092 => {
  _0x20cecf.forEach(_0x5e1f39 => {
