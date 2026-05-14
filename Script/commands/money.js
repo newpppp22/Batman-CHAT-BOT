@@ -50,53 +50,61 @@ module.exports.run = async function({ api, event, args, Currencies }) {
     }
 
     if (type === "send") {
-        if (Object.keys(mentions).length !== 1)
-            return api.sendMessage("⚠️ Usage: money send @tag <amount>", threadID, messageID);
+    const mentionIDs = Object.keys(mentions);
 
-        const uid = Object.keys(mentions)[0];
-        const amount = parseInt(args[args.length - 1]);
+    if (mentionIDs.length !== 1)
+        return api.sendMessage("⚠️ Usage: money send @tag <amount>", threadID, messageID);
 
-        if (isNaN(amount))
-            return api.sendMessage("⚠️ Usage: money send @tag <amount>", threadID, messageID);
+    const uid = mentionIDs[0];
 
-        const senderData = await Currencies.getData(senderID);
-        if (senderData.money < amount)
-            return api.sendMessage("❌ You don't have enough money!", threadID, messageID);
+    const amount = parseInt(args.find(a => !isNaN(a)));
 
-        await Currencies.decreaseMoney(senderID, amount);
-        await Currencies.increaseMoney(uid, amount);
+    if (!amount || amount <= 0)
+        return api.sendMessage("⚠️ Valid amount দিন!", threadID, messageID);
 
-        return api.sendMessage(
-            {
-                body: `✅ Sent ${amount}$ to ${mentions[uid]}`,
-                mentions: [{ tag: mentions[uid], id: uid }]
-            },
-            threadID,
-            messageID
-        );
-    }
+    const senderData = await Currencies.getData(senderID);
+    const senderMoney = senderData.money || 0;
 
-    if (type === "gift") {
-        if (Object.keys(mentions).length !== 1)
-            return api.sendMessage("⚠️ Usage: money gift @tag <amount>", threadID, messageID);
+    if (senderMoney < amount)
+        return api.sendMessage("❌ আপনার যথেষ্ট টাকা নেই!", threadID, messageID);
 
-        const uid = Object.keys(mentions)[0];
-        const amount = parseInt(args[args.length - 1]);
+    await Currencies.decreaseMoney(senderID, amount);
+    await Currencies.increaseMoney(uid, amount);
 
-        if (isNaN(amount))
-            return api.sendMessage("⚠️ Usage: money gift @tag <amount>", threadID, messageID);
+    return api.sendMessage(
+        {
+            body: `✅ Sent ${amount}$ to ${mentions[uid]}`,
+            mentions: [{ tag: mentions[uid], id: uid }]
+        },
+        threadID,
+        messageID
+    );
+        }
 
-        await Currencies.increaseMoney(uid, amount);
+  if (type === "gift") {
+    const mentionIDs = Object.keys(mentions);
 
-        return api.sendMessage(
-            {
-                body: `🎁 Gifted ${amount}$ to ${mentions[uid]}`,
-                mentions: [{ tag: mentions[uid], id: uid }]
-            },
-            threadID,
-            messageID
-        );
-    }
+    if (mentionIDs.length !== 1)
+        return api.sendMessage("⚠️ Usage: money gift @tag <amount>", threadID, messageID);
+
+    const uid = mentionIDs[0];
+
+    const amount = parseInt(args.find(a => !isNaN(a)));
+
+    if (!amount || amount <= 0)
+        return api.sendMessage("⚠️ Valid amount দিন!", threadID, messageID);
+
+    await Currencies.increaseMoney(uid, amount);
+
+    return api.sendMessage(
+        {
+            body: `🎁 Gifted ${amount}$ to ${mentions[uid]}`,
+            mentions: [{ tag: mentions[uid], id: uid }]
+        },
+        threadID,
+        messageID
+    );
+}
 
     if (type === "restart") {
         await Currencies.setData(senderID, { money: 0 });
