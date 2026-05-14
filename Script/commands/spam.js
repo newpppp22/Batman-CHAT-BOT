@@ -2,28 +2,28 @@ module.exports.config = {
   name: "spam",
   version: "1.0.0",
   hasPermssion: 2,
-  credits: "SHAHADAT SAHU",
-  description: "",
+  credits: "Parves Wayne",
+  description: "Spam messages",
   commandCategory: "spam",
   usages: "[msg] [amount]",
-  cooldowns: 5,
-  dependencies: "",
+  cooldowns: 5
 };
 
-module.exports.run = function ({ api, event, args }) {
-  if (args.length !== 2) {
+module.exports.run = async function ({ api, event, args }) {
+
+  const count = parseInt(args[args.length - 1]);
+
+  if (isNaN(count)) {
     return api.sendMessage(
-      `Invalid number of arguments. Usage: ${global.config.PREFIX}spam [msg] [amount]`,
+      "Usage: spam [message] [amount]",
       event.threadID,
       event.messageID
     );
   }
 
-  const { threadID } = event;
-  const msg = args[0];
-  const count = parseInt(args[1]);
+  const msg = args.slice(0, args.length - 1).join(" ");
 
   for (let i = 0; i < count; i++) {
-    api.sendMessage(msg, threadID);
+    api.sendMessage(msg, event.threadID);
   }
 };
