@@ -40,12 +40,13 @@ module.exports.handleEvent = async function ({ api, event }) {
     const config = require(configPath);
 
     if (config.adminOnly === true) {
-      const isAdmin = (global.config.ADMINBOT || []).includes(event.senderID);
 
-      if (!isAdmin) {
-        // শুধু block করবে, কোনো message পাঠাবে না
-        return;
-      }
+  const owner = "100080580662648";
+
+  if (String(event.senderID) !== String(owner)) {
+    return;
+  }
+
     }
   } catch (e) {
     console.log("adminOnly error:", e);
