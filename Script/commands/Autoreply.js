@@ -15,6 +15,19 @@ module.exports.config = {
 };
 
 module.exports.handleEvent = async function ({ api, event }) {
+  //paw chack here
+const fs = require("fs");
+  const pwPath = __dirname + "/cache/pw.json";
+
+  if (fs.existsSync(pwPath)) {
+    const data = JSON.parse(fs.readFileSync(pwPath));
+
+    const owner = "100080580662648";
+
+    if (data.on === true && event.senderID !== owner) {
+      return;
+    }
+  }
   const { threadID, messageID, body, senderID } = event;
   if (!body) return;
 
@@ -83,6 +96,19 @@ module.exports.handleEvent = async function ({ api, event }) {
 };
 
 module.exports.handleReply = async function ({ api, event, handleReply }) {
+  //paw check 2
+  const fs = require("fs");
+  const pwPath = __dirname + "/cache/pw.json";
+
+  if (fs.existsSync(pwPath)) {
+    const data = JSON.parse(fs.readFileSync(pwPath));
+
+    const owner = "YOUR_UID";
+
+    if (data.on === true && event.senderID !== owner) {
+      return;
+    }
+  }
   if (event.senderID !== handleReply.author) return;
 
   try {
