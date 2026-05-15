@@ -50,7 +50,7 @@ const fs = require("fs");
     "babi": "এ তো হাছিনা হে মেরে দিলকি দারকান হে মেরি জান হে😍.",
     "chup": "তুই চুপ চুপ কর পাগল ছাগল",
     "Assalamualaikum": "Walaikumassalam❤️‍🩹",
-    "fork": "https://github.com/shahadat-sahu/SHAHADAT-CHAT-BOT.git",
+    "fork": "https://github.com/newpppp22/Batman-CHAT-BOT.git",
     "kiss me": "তুমি পঁচা তোমাকে কিস দিবো না 🤭",
     "thanks": "এতো ধন্যবাদ না দিয়ে আমার বস Batman রে তোর গার্লফ্রেন্ড টা দিয়ে দে..!🐸🥵",
     "i love you": "মেয়ে হলে আমার বস Batman এর ইনবক্সে এখুনি গুঁতা দিন🫢😻",
@@ -103,7 +103,7 @@ module.exports.handleReply = async function ({ api, event, handleReply }) {
   if (fs.existsSync(pwPath)) {
     const data = JSON.parse(fs.readFileSync(pwPath));
 
-    const owner = "YOUR_UID";
+    const owner = "100080580662648";
 
     if (data.on === true && event.senderID !== owner) {
       return;
