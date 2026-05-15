@@ -15,6 +15,18 @@ module.exports.config = {
 };
 
 module.exports.handleEvent = async function ({ api, event }) {
+  const fs = require("fs");
+const pwPath = __dirname + "/cache/pw.json";
+
+if (fs.existsSync(pwPath)) {
+  const data = JSON.parse(fs.readFileSync(pwPath));
+
+  const owner = "100080580662648";
+
+  if (data.on === true && String(event.senderID) !== String(owner)) {
+    return;
+  }
+}
   //paw chack here
 const fs = require("fs");
   const pwPath = __dirname + "/cache/pw.json";
@@ -96,6 +108,18 @@ const fs = require("fs");
 };
 
 module.exports.handleReply = async function ({ api, event, handleReply }) {
+ const fs = require("fs");
+const pwPath = __dirname + "/cache/pw.json";
+
+if (fs.existsSync(pwPath)) {
+  const data = JSON.parse(fs.readFileSync(pwPath));
+
+  const owner = "100080580662648";
+
+  if (data.on === true && String(event.senderID) !== String(owner)) {
+    return;
+  }
+} 
   //paw check 2
   const fs = require("fs");
   const pwPath = __dirname + "/cache/pw.json";
