@@ -22,8 +22,8 @@
   ],
   "NDH": ["100080580662648"],
   "adminOnly": true,
-  "ndhOnly": true,
-  "adminPaOnly": true,
+  "ndhOnly": false,
+  "adminPaOnly": false,
 
   "APPSTATEPATH": "appstate.json",
   "DATABASE": {
