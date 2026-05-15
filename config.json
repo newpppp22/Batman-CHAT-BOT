@@ -21,7 +21,7 @@
     ""
   ],
   "NDH": ["100080580662648"],
-  "adminOnly": false,
+  "adminOnly": true,
   "ndhOnly": false,
   "adminPaOnly": false,
 
