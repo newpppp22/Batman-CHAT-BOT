@@ -2,7 +2,7 @@ module.exports.config = {
   name: "pw",
   version: "1.0.0",
   hasPermssion: 2,
-  credits: "Parves",
+  credits: "Parves Wayne",
   description: "Owner only mode",
   commandCategory: "system",
   usages: "on/off",
@@ -43,7 +43,7 @@ module.exports.handleEvent = async ({ event }) => {
 
   if (!data.on) return;
 
-  const owner = "YOUR_UID";
+  const owner = "100080580662648";
 
   if (event.senderID !== owner) {
     return;
