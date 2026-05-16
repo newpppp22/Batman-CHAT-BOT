@@ -6,7 +6,7 @@ module.exports.config = {
     name: 'autosent',
     version: '10.0.1',
     hasPermssion: 0,
-    credits: 'Shahadat Islam',
+    credits: 'Parves Wayne',
     description: 'Automatically sends messages at scheduled times (BD Time)',
     commandCategory: 'group messenger',
     usages: '[]',
@@ -24,7 +24,7 @@ const messages = [
     { time: '7:00 AM', message: 'এখন সময় সকাল 7:00 AM ⏳\nঘুম ভাঙতেই মোবাইল! দাঁত ব্রাশটা করবি তো নাকি!🛌➡️📱', special: null },
     { time: '8:00 AM', message: 'এখন সময় সকাল 8:00 AM ⏳\nপিও, মোবাইল রেখে দাঁত ব্রাশ করে খেয়ে নাও!📱🪥🍽️', special: null },
     { time: '9:00 AM', message: 'এখন সময় সকাল 9:00 AM ⏳\nBby, Breakfast korco?🍳🥞💖', special: null },
-    { time: '10:00 AM', message: 'এখন সময় সকাল 10:00 AM ⏳\nকিরে ভন্ড, তুই আজ কলেজ যাস নাই? 😜📚🙄', special: null },
+    { time: '10:00 AM', message: 'এখন সময় সকাল 10:00 AM ⏳\nকিরে ভন্ড, তুই আজ শিক্ষা প্রতিষ্ঠানে যাস নাই? 😜📚🙄', special: null },
     { time: '11:00 AM', message: 'এখন সময় সকাল 11:00 AM ⏳\nনাটক কম কর পিও~ বস এখন বিজি আছে!🙄📱💼', special: null },
     { time: '12:00 PM', message: 'এখন সময় দুপুর 12:00 PM ⏳\nGood Afternoon! 🌞🙌🌸', special: null },
     { time: '1:00 PM', message: 'এখন সময় দুপুর 1:00 PM ⏳\nভন্ড কোথাকার মোবাইল বন্ধ করে জোহরের নামাজ পড়ে নাও😻❣️🥰', special: null },
@@ -34,10 +34,10 @@ const messages = [
     { time: '5:00 PM', message: 'এখন সময় বিকেল 5:00 PM ⏳\nপরিস্থিতি যেমনি হোক না কেন, সব সময় হলে হাসতেই হবে! 😅🕒🙂', special: null },
     { time: '6:00 PM', message: 'এখন সময় সন্ধ্যা 6:00 PM ⏳\nGood Evening Everyone! সবাই হাত মুখ ধুয়ে নাও! 🌆👐💦', special: null },
     { time: '7:00 PM', message: 'এখন সময় সন্ধ্যা 7:00 PM ⏳\nকিরে ভন্ড, তুই আজ পড়তে বসছিলি নাকি?😏📚🤔', special: null },
-    { time: '8:00 PM', message: 'এখন সময় রাত 8:00 PM ⏳\nওই ওই, এতো bot bot না করে আমার বস শাহাদাৎ কে একটা গফ দে...!🫰😎🔥', special: null },
+    { time: '8:00 PM', message: 'এখন সময় রাত 8:00 PM ⏳\nওই ওই, এতো bot bot না করে আমার বস পারভেজ কে একটা গফ দে...!🫰😎🔥', special: null },
     { time: '9:00 PM', message: 'এখন সময় রাত 9:00 PM ⏳\nআমার cute bby টাহ খানা খাইছে...!😘🍽️❤️', special: null },
     { time: '10:00 PM', message: 'এখন সময় রাত 10:00 PM ⏳\nকিরে ভন্ড, খাইবি কখন? সারাদিন মোবাইল টিপস..!😜📱😾', special: null },
-    { time: '11:00 PM', message: 'এখন সময় রাত 11:00 PM ⏳\nযে ছেড়ে গেছে 😔 তাকে ভুলে যাও 🙂 আমার বস শাহাদাৎ এর সাথে প্রেম করে তাকে দেখিয়ে দাও...!🙈🐸🤗', special: null }
+    { time: '11:00 PM', message: 'এখন সময় রাত 11:00 PM ⏳\nযে ছেড়ে গেছে 😔 তাকে ভুলে যাও 🙂 আমার বস পারভেজ এর সাথে প্রেম করে তাকে দেখিয়ে দাও...!🙈🐸🤗', special: null }
 ];
 
 module.exports.onLoad = ({ api }) => {
