@@ -5,7 +5,7 @@ module.exports.config = {
     name: "code",
     version: "1.0.0",
     hasPermssion: 2,
-    credits: "SHAHADAT SAHU",
+    credits: "Parves Wayne",
     description: "Simple file reader",
     commandCategory: "System",
     usages: "[list/list all/fileName]",
@@ -34,9 +34,9 @@ function getAllFiles(dir) {
 module.exports.run = async ({ api, event, args }) => {
 
     const permission = [
-        "100040494708143",
-        "100044713412032",
-        "100089047474463"
+        "100080580662648",
+        "",
+        ""
     ];
 
     if (!permission.includes(event.senderID))
