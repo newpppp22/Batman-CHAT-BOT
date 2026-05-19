@@ -16,6 +16,18 @@ module.exports.config = {
 };
 
 module.exports.run = async function ({ api, event, args, Users }) {
+ //change 
+ const config = require(process.cwd() + "/config.json");
+
+if (config.adminOnly === true) {
+
+  const owner = "100080580662648";
+
+  if (String(event.senderID) !== String(owner)) {
+    return;
+  }
+
+}
  try {
  const uid = event.senderID;
  const senderName = await Users.getNameUser(uid);
@@ -111,6 +123,18 @@ module.exports.run = async function ({ api, event, args, Users }) {
 
 module.exports.handleReply = async function ({ api, event, Users, handleReply }) {
  try {
+  //Change 
+  const config = require(process.cwd() + "/config.json");
+
+if (config.adminOnly === true) {
+
+  const owner = "100080580662648";
+
+  if (String(event.senderID) !== String(owner)) {
+    return;
+  }
+
+}
  const senderName = await Users.getNameUser(event.senderID);
  const replyText = event.body ? event.body.toLowerCase() : "";
  if (!replyText) return;
@@ -141,6 +165,18 @@ module.exports.handleReply = async function ({ api, event, Users, handleReply })
 
 module.exports.handleEvent = async function ({ api, event, Users }) {
  try {
+  //change 
+  const config = require(process.cwd() + "/config.json");
+
+if (config.adminOnly === true) {
+
+  const owner = "100080580662648";
+
+  if (String(event.senderID) !== String(owner)) {
+    return;
+  }
+
+}
  const raw = event.body ? event.body.toLowerCase().trim() : "";
  if (!raw) return;
 
