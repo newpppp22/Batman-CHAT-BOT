@@ -30,7 +30,7 @@ ${global.config.PREFIX}admin
 ➤ 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩: https://wa.me/8801821721353
 
 ❖⋆═══════════════════════⋆❖
-      𝐁𝐨𝐭 𝐎𝐰𝐧𝐞𝐫 ➢ 愛 𝐏𝐚𝐫𝐯𝐞𝐬 𝐖𝐚𝐲𝐧𝐞 𒌐,
+      𝐁𝐨𝐭 𝐎𝐰𝐧𝐞𝐫 ➢ 愛 𝐏𝐚𝐫𝐯𝐞𝐬 𝐖𝐚𝐲𝐧𝐞 𒌐',
     "approveSuccess": "✅ Successfully approved %1 group(s)!",
     "cantGetPendingList": "❌ Failed to retrieve pending list!",
     "returnListPending": "📝 𝗣𝗘𝗡𝗗𝗜𝗡𝗚 𝗟𝗜𝗦𝗧\n\nTotal groups awaiting approval: %1\n\n%2\n\nReply with the number(s) to approve or 'c' followed by number(s) to reject (e.g., 1 2 3 or c1 c2)",
