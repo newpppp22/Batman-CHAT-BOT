@@ -128,5 +128,3 @@ console.error(e);
 return api.sendMessage(getText("cantGetPendingList"), threadID, messageID);
 }
 };
-
-Aikhane problem koi? Bot ar spam a akta   GC ache o show o korse j akta GC ache but accept korle hoi na
